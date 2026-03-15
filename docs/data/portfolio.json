@@ -2,8 +2,8 @@
   "about": {
     "contact": {
       "email": "maros.oravkin@gmail.com",
-      "phone [SK]": "+421902506071",
-      "phone [CZ]": "+420703037370",
+      "phoneSK": "+421902506071",
+      "phoneCZ": "+420703037370",
       "linkedin": "https://www.linkedin.com/in/marosoravkin/", 
       "cv": {
         "cz": "/data/cv-cz.pdf", 

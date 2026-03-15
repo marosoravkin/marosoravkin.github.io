@@ -75,11 +75,11 @@ export default function Contact() {
           <a href={`mailto:${contact.email}?subject=${encodeURIComponent('Portfolio message')}`} target="_blank" rel="noreferrer">
             <button className="braces-button">Email Me</button>
           </a>
-          <a href={`tel:${contact.phone}`}>
-            <button className="braces-button">Call Me</button>
+          <a href={`tel:${contact.phoneCZ}`}>
+            <button className="braces-button">{"Call Me [CZ]"}</button>
           </a> 
           &nbsp;
-          <a href={`https://wa.me/${contact.phone}`} target="_blank" rel="noreferrer">
+          <a href={`https://wa.me/${contact.phoneSK}`} target="_blank" rel="noreferrer">
             <button className="braces-button">Message on WhatsApp</button>
           </a>
         </div>

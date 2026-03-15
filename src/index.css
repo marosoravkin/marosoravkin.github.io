@@ -272,6 +272,7 @@ h1 {
   box-sizing: border-box;
   padding: 2rem 0;
   width: 100%;
+  max-width: calc(100vw - var(--sidebar-width)); /* keep it inside viewport on desktop */
   height: max-content;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -427,15 +428,10 @@ h1 {
   }
 
   /* ===================== Projects ======================= */
-
-  .project-card {
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
+  
   .projects-container {
-    padding: 1rem;
-    height: max-content;
+    margin-left: 0; /* sidebar is small/hidden in this range */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
 
   .resizable-container {
@@ -443,36 +439,18 @@ h1 {
     flex-direction: column;
   }
 
-  .projects-sidebar {
-    width: calc(100vw - var(--sidebar-width));
-    max-width: calc(100vw - var(--sidebar-width));
-    min-width: calc(100vw - var(--sidebar-width));
-    resize: none;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-    margin-left: 0;
-  }
-
-  .content p, .content li, .content code, .content a{
-    font-size: smaller;
-    width: 100%;
-    white-space: pre-wrap; 
-    word-break: break-word;
-  }
-
-  .content img {
-    width: 100%;
-    height: auto;
-  }
-
-  /* ==================== Markdown ===================== */
-
-  
-
   /* ===================== About ======================= */
 
   .about-container {
     padding: 1rem;
+  }
+
+  .about-bio-container {
+    flex-direction: column;
+  }
+
+  .about-profile-picture{
+    margin: 0 auto;
   }
 
   /* ===================== Contact ======================= */
