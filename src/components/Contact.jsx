@@ -10,48 +10,71 @@ export default function Contact() {
       .then(data => setContact(data.about.contact));
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    const form = e.target;
+  //   const form = e.target;
 
-    const formData = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    };
+  //   const formData = {
+  //     name: form.name.value,
+  //     email: form.email.value,
+  //     message: form.message.value,
+  //   };
 
-    emailjs.sendForm(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      form,
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-    ).then(
-      (result) => {
-        alert("Thank you for your email! I will reach back to you within 1-2 working days.");
-        console.log(result.text);
-        form.reset();
-      },
-      (error) => {
-        alert("Failed to send email. Please try again.");
-        console.error(error.text);
-      }
-    );
-  };
+  //   emailjs.sendForm(
+  //     process.env.REACT_APP_EMAILJS_SERVICE_ID,
+  //     process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+  //     form,
+  //     process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+  //   ).then(
+  //     (result) => {
+  //       alert("Thank you for your email! I will reach back to you within 1-2 working days.");
+  //       console.log(result.text);
+  //       form.reset();
+  //     },
+  //     (error) => {
+  //       alert("Failed to send email. Please try again.");
+  //       console.error(error.text);
+  //     }
+  //   );
+  // };
 
   return (
     <div className='contact-container'>
       <div className='contact-block'>
-        <h1>Contact Me</h1>
+        <h1>Contact</h1>
         <div>
-          <p><strong>Email:</strong> {contact.email}</p>
-          <p><strong>Phone:</strong> {contact.phone}</p>
-          <p><strong>GitHub:</strong> <a href={contact.github} target="_blank" rel="noreferrer">{contact.github}</a></p>
-          <p><strong>Linkedin:</strong> <a href={contact.linkedin} target="_blank" rel="noreferrer">{contact.linkedin}</a></p>
+          {Object.entries(contact)
+            // optionally skip nested/complex fields
+            .filter(([key]) => key !== 'cv')
+            .map(([key, value]) => {
+              // Capitalize first letter of key
+              const title = key.charAt(0).toUpperCase() + key.slice(1);
+
+              // Render links for URLs, plain text otherwise
+              const isUrl = typeof value === 'string' && value.startsWith('http');
+
+              return (
+                <p key={key}>
+                  <strong>[ {title} ] </strong>
+                  {isUrl ? (
+                    <a href={value} target="_blank" rel="noreferrer">
+                      {value}
+                    </a>
+                  ) : (
+                    value
+                  )}
+                </p>
+              );
+            })}
         </div>
+        &nbsp;
 
         {/* Call to Action Buttons */}
         <div className='contact-block'>
+          <a href={`mailto:${contact.email}?subject=${encodeURIComponent('Portfolio message')}`} target="_blank" rel="noreferrer">
+            <button className="braces-button">Email Me</button>
+          </a>
           <a href={`tel:${contact.phone}`}>
             <button className="braces-button">Call Me</button>
           </a> 
@@ -62,7 +85,7 @@ export default function Contact() {
         </div>
 
         {/* Contact Form */}
-        <form className='contact-block' onSubmit={handleSubmit}>
+        {/* <form className='contact-block' onSubmit={handleSubmit}>
           <div>
             <label>Name:</label>
             <input type="text" name="name" required style={{ width: '100%' }} />
@@ -76,7 +99,7 @@ export default function Contact() {
             <textarea name="message" rows="5" required style={{ width: '100%' }} />
           </div>
           <button type="submit" className="braces-button">Send Email</button>
-        </form>
+        </form> */}
       </div>
     </div>
   );

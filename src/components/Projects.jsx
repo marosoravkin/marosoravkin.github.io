@@ -13,20 +13,20 @@ export default function Projects({getRandomColor}) {
 
   return (
     <div className="projects-container">
-      <h1>Projects</h1>
       {projects.map((project, idx) => (
         <div key={idx} className='project-card'>
           <div className='project-img-wrapper'>
             <img src={process.env.PUBLIC_URL + project.img} alt=""/>
           </div>
-          <div className='lines'>
-            <div className='project-line'><span className="key title">{project.title}</span></div>
-            <div className='project-line'><span className="key">"description"</span>{project.description}</div>
-            <div className='button-group'>
-              <a className="braces-button" href={process.env.PUBLIC_URL + project.file} target="_blank">Open PDF</a>
-              <a className="braces-button" href={process.env.PUBLIC_URL + project.file} download="cv.pdf">Download PDF</a>
-            </div>          
-          </div>
+          &nbsp;
+          <h4 className='project-title'>{project.title}</h4>
+          &nbsp;
+          <div className='project-line'>{project.description}</div>
+          &nbsp;
+          <div className='button-group'>
+            <a className="braces-button" href={process.env.PUBLIC_URL + project.file} target="_blank">Open PDF</a>
+            <a className="braces-button" href={process.env.PUBLIC_URL + project.file} download="cv.pdf">Download PDF</a>
+          </div>          
         </div>
       ))}
     </div>

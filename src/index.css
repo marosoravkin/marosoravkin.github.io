@@ -250,7 +250,6 @@ h1 {
   height: calc(100dvh - var(--nav-height));
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .canvas-wrapper {
@@ -271,214 +270,53 @@ h1 {
   font-family: 'IBM Plex Mono', monospace;
   color: var(--text-color, #ccc);
   box-sizing: border-box;
-  padding: 2rem;
-  margin-left: var(--sidebar-width);
-  font-family: 'IBM Plex Mono', monospace;
-  width: calc(100dvw - var(--sidebar-width));
+  padding: 2rem 0;
+  width: 100%;
   height: max-content;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  column-gap: 1rem;
+  row-gap: 2rem;
 }
 
 .project-card {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
   font-size: 0.9rem;
+  margin-bottom: 2rem;
+  height: auto;
+}
+
+.project-card > :last-child {
+  margin-top: auto;
 }
 
 .project-line {
-  padding: 0.2rem;
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: justify; 
+}
+
+.project-card .braces-button {
   font-size: 0.9rem;
 }
 
-.project-line .title-value {
-  font-size: large;
-}
-
-.project-line .braces-button {
-  font-size: 0.9rem;
-}
-
-.project-line .wrap{
-  display: inline-block;
-  white-space: pre-wrap;
-  word-break: break-word;
-  max-width: 70%; /* wrapping width */
-  vertical-align: top;
-  /* Hanging indent */
-  padding-left: 1ch;    /* matches key + ": " width */
-  text-indent: -1ch;    /* pulls first line back */
-}
-
-.key {
-  margin-left: 3rem;
+.project-title {
+  text-transform: uppercase;
+  margin: 0.25rem 0;
 }
 
 .project-img-wrapper {
   height: 100%;
+  height: auto; 
 }
 
 .project-img-wrapper img {
-  height: 12rem;
-  width: auto; /* Optional: maintains aspect ratio */
-  object-fit: cover; /* Optional: ensures the image fills the space without distortion */
-}
-
-/* ====================================== Projects Sidebar, Project Detail ============================================== */
-
-.project-docs-page {
-  display: flex;
-}
-
-.projects-sidebar {
-  width: 280px;
-  padding: 1rem;
-  min-width: 90px;
-  max-width: 50%;
-  overflow-y: auto;
-  resize: horizontal;
-  box-sizing: border-box;
-  border-right: 1px solid #ddd;
-}
-
-.projects-sidebar ul {
-  margin-top: 1rem;
-}
-
-.projects-sidebar h3 {
-  margin-top: 0;
-}
-
-.project-docs-wrapper {
-  height: 100% - var(--nav-height);
-  overflow: hidden;
-}
-
-.resizable-container {
-  display: flex;
-  width: calc(100vw - var(--sidebar-width));
-  margin: var(--sidebar-width);
-  height: 100%;
-}
-
-.resizer {
-  width: 5px;
-  cursor: col-resize;
-}
-
-.content {
-  flex-grow: 1;
-  padding: 2rem;
-  overflow-y: auto;
-}
-
-.braces-button.disabled {
-  opacity: 0;
-  pointer-events: none;
-  cursor: default;
-}
-
-.projects-sidebar button {
-  background: none;
-  font-family: 'IBM Plex Mono', monospace;
-  border: none;
-  font-size: smaller;
-  letter-spacing: 0.001rem;
-  cursor: pointer;
-  padding: 0.25rem 0;
-  text-align: left;
-  width: 100%;
-  color: var(--text-color);
-}
-
-.project-button {
-  background: none;
-  border: none;
-  color: inherit;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  font-family: inherit;
-  padding: 0.3rem 0;
-  width: 100%;
-  display: block;
-  max-width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.project-button:hover {
-  color: var(--button-selected);
-}
-
-.project-button::before {
-  content: '[';
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-  pointer-events: none;
-  margin-right: 0.25rem;
-}
-
-.project-button::after {
-  content: ']';
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-  pointer-events: none;
-  margin-left: 0.25rem;
-}
-
-.project-button.active {
-    font-weight: bold;
-}
-
-.project-button.active::before, .project-button.active::after {
-    opacity: 1;
-    font-weight: bold;
-}
-
-.projects-sidebar ul {
-  list-style-type: none;
-  padding-left: 0;
-  color: var(--text-color);
-}
-
-/* ====================================== Markdown ============================================== */
-
-.content {
-  padding: 0 1rem 1rem 1rem;
-  flex: 1;
-}
-
-.content p, .content li, .content img{
-  font-size: small;
-}
-
-.content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .content p {
-  margin: 1rem 0 0 0; 
-}
-
-.content p {
-  margin: 0.5rem 0; 
-}
-
-iframe {
-  pointer-events: auto;
-  overflow: auto;
-  display: block;
-}
-
-.pdf-wrapper {
-  height: 800px;         /* fixed height */
-  overflow-y: auto;      /* vertical scroll */
-  -webkit-overflow-scrolling: touch; /* smooth on iOS */
-  position: relative;
-}
-
-.pdf-wrapper {
-  height: 800px;         /* fixed height */
-  overflow-y: auto;      /* vertical scroll */
-  -webkit-overflow-scrolling: touch; /* smooth on iOS */
-  position: relative;
+  width: 100%;            /* fill full card width */
+  height: auto;
+  object-fit: cover;
 }
 
 /* ====================================== About page ============================================== */
@@ -497,12 +335,28 @@ iframe {
   font-size: 0.9rem;
   line-height: 130%;
   margin-bottom: 0.3rem;
+  text-align: justify;
 }
 
 .about-container section {
   margin: 1rem 0;
 }
 
+.about-bio-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.about-profile-picture img {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  margin-left: 3rem;
+}
+
+.about-bio p {
+  font-size: 1rem;
+}
 
 /* ====================================== Contact page ============================================== */
 
@@ -575,32 +429,12 @@ iframe {
 
   .project-card {
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
   }
 
   .projects-container {
     padding: 1rem;
     height: max-content;
-  }
-
-  .project-line .wrap{
-    max-width: 100%; /* wrapping width */
-  }
-
-  .project-line .title {
-    display: none;
-  }
-
-  .project-line .title-value {
-    font-size: medium;
-  }
-
-  .key {
-    margin: 0;
-  }
-
-  .project-line .braces {
-    display: none;
   }
 
   .resizable-container {
@@ -653,10 +487,6 @@ iframe {
 
   html {
     font-size: smaller;
-  }
-
-  .project-line .title-value {
-    font-size: small;
   }
 
   .button-group {

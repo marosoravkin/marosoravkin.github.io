@@ -10,6 +10,7 @@
         "eng": "/data/cv-eng.pdf"
       }
     }, 
+    "profilePicture": "/data/profile-picture.jpeg",
     "bio": "I'm a junior software developer with a strong foundation in C programming, which has given me a solid understanding of how software works at a low level — from memory management through parralelism to system calls. Now, I’m actively building my skills in cloud infrastructure, Linux systems, and DevOps practices. I’ve worked with tools like Docker, AWS, and Terraform, and I’m especially interested in gaining deeper, hands-on experience in distributed systems, automation, and cloud computing. Combined with my previous interest in web development with JavaScript, React, and Node.js, I am creating a proper base for understanding how the applications are deployed, scaled, and maintained in real-world environments.", 
     "education": {
       "42": "Student (since March 2024, Prague, CZ). A peer-to-peer software engineering program, in which I was selected after completing the intensive entrance Piscine. The curriculum is project-based and emphasizes system programming, algorithms, problem-solving in a Linux environment, alongside collaboration and communication, solely in English. Currently past the halfway point, working on C++ and advanced infrastructure-focused projects.", 
@@ -39,31 +40,31 @@
     {
       "title": "GreenHack 2025 ČEPS Prize winner",
       "description": "For the Grid&Green Challenge at GreenHack 2025, we developed a web-based tool that helps urban planners, civil engineers, and grid design consultants find optimal power grid routes using a combination of remote sensing & GIS datasets like CORINE, ZABAGED, and Natura 2000. Our tool provides route visualisation algorithm optimised for cost, sustainability or other metrics selected by filtering options.",
-      "img": "/data/header-images/greenhack.png", 
+      "img": "/data/header-images/project.png", 
       "file":"/data/files/project.pdf"
     },
     {
       "title": "miniRT - A simple ray tracer",
       "description": "Building a ray tracer to render scenes consisting of simple objects, with dynamic camera movement and object resizing, laying ground for deep graphical programming knowledge.",
-      "img": "/data/header-images/minirt.PNG", 
+      "img": "/data/header-images/project.png", 
       "file":"/data/files/project.pdf"
     },
     {
       "title": "Host a website on Cloud(AWS)",
       "description": "A project for university was to host a website with frontend and backend on AWS - designing the architecture, creating and configuring the services and their commmunication, while maintaining key requirements of scalability, low latency, and high availability, and replicating the setup in a Terraform script.",
-      "img": "/data/header-images/cloud-prog.png", 
+      "img": "/data/header-images/project.png", 
       "file":"/data/files/project.pdf"
     },
     {
       "title": "Jenkins CI/CD pipeline",
       "description": "Taking the Greenhack project further, I created a CI/CD pipeline to automate building, testing, packaging, and deploying new versions of the code to make further work on the project easier, and to gain more experience in the DevOps field.",
-      "img": "", 
+      "img": "/data/header-images/project.png", 
       "file":"/data/files/project.pdf"
     },
     {
       "title": "minishell - Own little Bash",
       "description": "Taking bash as a reference, the program displays a prompt and processes user input using pipes, processes, file manipulation, envs, all to be able to execute commands, either build-in, system binaries, or user programs. ",
-      "img": "/data/header-images/minishell.png", 
+      "img": "/data/header-images/project.png", 
       "file":"/data/files/project.pdf"
     }
   ]
