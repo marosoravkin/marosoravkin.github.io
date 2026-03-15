@@ -25,7 +25,7 @@ export default function Projects({getRandomColor}) {
           &nbsp;
           <div className='button-group'>
             <a className="braces-button" href={process.env.PUBLIC_URL + project.file} target="_blank">Open PDF</a>
-            <a className="braces-button" href={process.env.PUBLIC_URL + project.file} download="cv.pdf">Download PDF</a>
+            <a className="braces-button" href={process.env.PUBLIC_URL + project.file} download={`oravkin-${project.file.split('/').pop() || 'oravkin'}`}>Download PDF</a>
           </div>          
         </div>
       ))}

@@ -364,20 +364,21 @@ h1 {
   padding: 2rem;
   box-sizing: border-box;
   width: calc(100vw - var(--sidebar-width));
+  margin-left: var(--sidebar-width);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-left: var(--sidebar-width);
-}
-
-.contact-container p {
-  margin: 0.5rem 0rem;
+  justify-content: center;   /* vertical center */
+  align-items: center;       /* horizontal center */
+  height: calc(100vh - var(--nav-height)); /* fill page height under navbar */
 }
 
 .contact-block {
   margin: 1rem 0;
-  max-width: 700px;
+  width: auto;               /* optional: make it responsive */
+}
+
+.contact-container p {
+  margin: 0.5rem 0rem;
 }
 
 .contact-block div {

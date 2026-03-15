@@ -21,12 +21,16 @@ export default function About({getRandomColor}) {
           <h1>About Me</h1>
 
           <div className="button-group">
+            <a className="braces-button" href={process.env.PUBLIC_URL + about?.contact?.cv?.cz} target="_blank" rel="noopener noreferrer">
+              {"Open CV [CZ]"}
+            </a>
+            &nbsp;
             <a className="braces-button" href={process.env.PUBLIC_URL + about?.contact?.cv?.eng} target="_blank" rel="noopener noreferrer">
               {"Open CV [ENG]"}
             </a>
             &nbsp;
-            <a className="braces-button" href={process.env.PUBLIC_URL + about?.contact?.cv?.cz} target="_blank" rel="noopener noreferrer">
-              {"Open CV [CZ]"}
+            <a className="braces-button" href={process.env.PUBLIC_URL + about?.contact?.cv?.eng} download="oravkin-cv.pdf">
+              {"Download CV [ENG]"}
             </a>
             &nbsp;
             <a className="braces-button" href={about?.contact?.linkedin} target="_blank" rel="noopener noreferrer">
