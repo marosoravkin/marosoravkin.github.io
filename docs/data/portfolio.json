@@ -1,0 +1,71 @@
+{
+  "about": {
+    "contact": {
+      "email": "zuzana.piarova1@gmail.com",
+      "phone": "+421907677920",
+      "github": "https://github.com/zuzanapiarova", 
+      "linkedin": "https://www.linkedin.com/in/zuzanapiarova/", 
+      "cv": {
+        "cz": "/data/cv-cz.pdf", 
+        "eng": "/data/cv-eng.pdf"
+      }
+    }, 
+    "profilePicture": "/data/profile-picture.jpeg",
+    "bio": "I'm a junior software developer with a strong foundation in C programming, which has given me a solid understanding of how software works at a low level — from memory management through parralelism to system calls. Now, I’m actively building my skills in cloud infrastructure, Linux systems, and DevOps practices. I’ve worked with tools like Docker, AWS, and Terraform, and I’m especially interested in gaining deeper, hands-on experience in distributed systems, automation, and cloud computing. Combined with my previous interest in web development with JavaScript, React, and Node.js, I am creating a proper base for understanding how the applications are deployed, scaled, and maintained in real-world environments.", 
+    "education": {
+      "42": "Student (since March 2024, Prague, CZ). A peer-to-peer software engineering program, in which I was selected after completing the intensive entrance Piscine. The curriculum is project-based and emphasizes system programming, algorithms, problem-solving in a Linux environment, alongside collaboration and communication, solely in English. Currently past the halfway point, working on C++ and advanced infrastructure-focused projects.", 
+      "IU": "Bachelor of Science in Software Engineering (2022-2026, Berlin, DE). Fully remote program focused on programming, software architecture, databases, and modern technologies. Enrolled in 2022 to build a solid theoretical and practical programming foundation, on top of independent learning.", 
+      "CTU": "Architecture Student (2019–2021, Prague, CZ). Studied architecture on ČVUT with a strong focus on mathematics, structural analysis, technical drawing and CAD software. The program sharpened my precision, logic, and problem-solving mindset. I chose to leave after two years, after thorough consideration, upon realizing my expectations and future outlooks did not align with the career path."
+    }, 
+    "skills": {
+      "C": "strong grasp of low-level programming, memory management, system calls, Makefiles, parallelization and more. Built several projects from scratch, including command-line tools and graphical projects", 
+      "web development": "started with frontend in 2021 using Codecademy, built responsive websites using HTML, CSS, and JavaScript, transitioned to using React, later experimented with API integration and working with Node.js for full-stack applications", 
+      "Linux/bash": "daily use of Linux environments. Comfortable with command-line tools, file system navigation, shell scripting, and writing automation scripts. Explored Unix internals through 42Prague system programming projects",
+      "scripting": "wrote Bash scripts to automate repetitive tasks, deploy code, and manage files or processes",
+      "cloud (beginner)": "gained hands-on experience in deployment with AWS (EC2, S3, ALB, Cloudfront, Auto Scaling), tried infrastructure as code tool terraform, planning to get AWS Cloud Practitioner certification", 
+      "devops (beginner)": "experimenting with simple Docker containers, deployed applications on a few different services, wrote scripts to automate tasks, learned about CI/CD pipelines and Jenkins and designed one for a university project",
+      "design": "with a background in architecture and having creative hobbies in my childhood, I care about aesthetics and user experience, with focus on clean layouts, balanced visual hierarchy, and intuitive interfaces", 
+      "documentation": "creating clear, structured documentation for my projects, adding short, explanatory comments to my code, keeping detailed notes for university classes in cloud, creating setup guides for myself to return back to when needed, keeping my cloud storage organized for easy information access"
+    },
+    "Experience": {
+      "Scott.Weber": "Community Representative (2023-2024). Scott.Weber provides a flexible work environment and office spaces for individuals and large teams in 17 locations over Czech Republic. In this role, I was in a team responsible for smooth operation of the Scott.Weber Churchill location. I actively engaged with community members, supported event coordination, communicated with the Facility Management of the building, resolved client requests and issues, and for larger items, facilitated clear communication between clients and management of responsible department. I provided tours and all necessary information about the facility to interested smaller clients. Additionally, I handled administrative tasks such as providing clients with relevant informations, onboarding of new clients, and managed legal and financial documents. It was an amazing professional experience, coming into contact with various companies in different industries in a highly professional environment. If I did not decide to leave to focus on my studies, the company provided many opportinities for growth.", 
+      "Inditex": "Sales Representative & Stockroom Responsible (2021-2023, Eindhoven, NL; Prague, CZ). Managed daily sales floor operations and provided customer service in English. In Eindhoven, oversaw inventory organization and stockroom logistics. After relocating to Prague, took on additional responsibilities including store opening and closing procedures, cash register reconciliation, and processing incoming inventory shipments."
+    },
+    "My Path into Tech": "I graduated from math and descriptive geometry from a grammar school in Slovakia. The plan was to become an architect, so the next logical step was to go study architecture. During covid, I quit the studies half-way and moved to the Netherlands. While working there, I started learning programming, staring by learning web development on my own, and since it sparked a deep interest, I set to get a proper in-depth knowledge, so I enrolled in a university to study Software Engineering. After living in the Netherlands for 2 years, I relocated to Prague, where I took on another programming school, 42Prague. There, I dove into low-level programming, Unix systems, process management, and shell scripting. I quit my full-time job to focus on the studies and thanks to time gained because of that decision, I’ve steadily built up a deep interest in system-level software and infrastructure, showcased in solid portfolio of hands-on projects.",
+    "Working On": "At 42 Prague, I'm currently expanding into C++ with a focus on object-oriented programming. I'm also set to complete my Bachelor's degree in the upcoming academic year. To strengthen my cloud knowledge, I plan to earn the AWS Cloud Practitioner certification, building on the practical experience gained working on a university project. I'm excited to continue developing my skills in cloud infrastructure, system design, and devops through increasingly complex, hands-on projects. One particular project coming up in my 42 studies I am excited about is to build an HTTP web server from scratch.",
+    "My Values": "I value efficiency above all — both in work and everyday life. Avoiding wasted effort, planing ahead, and approaching tasks with intention and without unnecessary complexity helps deliver results without wasting time or energy, which in turn makes life easier. One trait that defines how I learn is the need to understand things from the ground up. When faced with a new topic, I naturally dig into the fundamentals to grasp how things work “under the hood”, needing all the blocks to make a complete picture. While this sometimes slows me down initially, it leads to deeper understanding and stronger long-term competence in the topic.",
+    "Looking For": "I believe I now have a strong foundation and a programmer’s mindset, and I’m ready to take the first step into my IT career. I’m eager to work alongside engineers who open to mentoring or sharing insights into real-world infrastructure and automation challenges. I want to grow in areas like cloud, distributed systems, and DevOps. The job does not necessarily need to be in one of those areas, as I realise Cloud Engineering or DevOps are more senior roles, but I'm excited to contribute, learn by doing, and gain hands-on experience that helps me progress towards such carreer."
+  },
+  "projects": [
+    {
+      "title": "GreenHack 2025 ČEPS Prize winner",
+      "description": "For the Grid&Green Challenge at GreenHack 2025, we developed a web-based tool that helps urban planners, civil engineers, and grid design consultants find optimal power grid routes using a combination of remote sensing & GIS datasets like CORINE, ZABAGED, and Natura 2000. Our tool provides route visualisation algorithm optimised for cost, sustainability or other metrics selected by filtering options.",
+      "img": "/data/header-images/project.png", 
+      "file":"/data/files/project.pdf"
+    },
+    {
+      "title": "miniRT - A simple ray tracer",
+      "description": "Building a ray tracer to render scenes consisting of simple objects, with dynamic camera movement and object resizing, laying ground for deep graphical programming knowledge.",
+      "img": "/data/header-images/project.png", 
+      "file":"/data/files/project.pdf"
+    },
+    {
+      "title": "Host a website on Cloud(AWS)",
+      "description": "A project for university was to host a website with frontend and backend on AWS - designing the architecture, creating and configuring the services and their commmunication, while maintaining key requirements of scalability, low latency, and high availability, and replicating the setup in a Terraform script.",
+      "img": "/data/header-images/project.png", 
+      "file":"/data/files/project.pdf"
+    },
+    {
+      "title": "Jenkins CI/CD pipeline",
+      "description": "Taking the Greenhack project further, I created a CI/CD pipeline to automate building, testing, packaging, and deploying new versions of the code to make further work on the project easier, and to gain more experience in the DevOps field.",
+      "img": "/data/header-images/project.png", 
+      "file":"/data/files/project.pdf"
+    },
+    {
+      "title": "minishell - Own little Bash",
+      "description": "Taking bash as a reference, the program displays a prompt and processes user input using pipes, processes, file manipulation, envs, all to be able to execute commands, either build-in, system binaries, or user programs. ",
+      "img": "/data/header-images/project.png", 
+      "file":"/data/files/project.pdf"
+    }
+  ]
+}
