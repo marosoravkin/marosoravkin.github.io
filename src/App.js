@@ -61,7 +61,7 @@ function App() {
       <SideBar theme={theme} setTheme={setTheme}  />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home theme={theme}/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/projects" element={<Projects getRandomColor={getRandomColor}/>} />
         <Route path="/about" element={<About getRandomColor={getRandomColor}/>} />
         <Route path="/contact" element={<Contact />} />

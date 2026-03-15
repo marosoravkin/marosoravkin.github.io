@@ -11,28 +11,45 @@ export default function About({getRandomColor}) {
       .catch((err) => console.error('Failed to load data:', err));
   }, []);
 
+  const profilePicture = about.profilePicture;
+  const bio = about.bio;
+
   return (
     <div className="about-container">
-      <h1>About Me</h1>
+      <div className="about-bio-container">
+        <div className="about-bio">
+          <h1>About Me</h1>
 
-      <div className="button-group">
-        <a className="braces-button" href={process.env.PUBLIC_URL + about?.contact?.cv?.eng} target="_blank" rel="noopener noreferrer">
-          {"Open CV [ENG]"}
-        </a>
-        &nbsp;
-        <a className="braces-button" href={process.env.PUBLIC_URL + about?.contact?.cv?.cz} target="_blank" rel="noopener noreferrer">
-          {"Open CV [CZ]"}
-        </a>
-        &nbsp;
-        <a className="braces-button" href={process.env.PUBLIC_URL + about?.contact?.cv} download="cv.pdf">
-         Download CV
-        </a>
-        &nbsp;
-        <a className="braces-button" href={about?.contact?.linkedin} target="_blank" rel="noopener noreferrer">
-         LinkedIn
-        </a>
+          <div className="button-group">
+            <a className="braces-button" href={process.env.PUBLIC_URL + about?.contact?.cv?.eng} target="_blank" rel="noopener noreferrer">
+              {"Open CV [ENG]"}
+            </a>
+            &nbsp;
+            <a className="braces-button" href={process.env.PUBLIC_URL + about?.contact?.cv?.cz} target="_blank" rel="noopener noreferrer">
+              {"Open CV [CZ]"}
+            </a>
+            &nbsp;
+            <a className="braces-button" href={about?.contact?.linkedin} target="_blank" rel="noopener noreferrer">
+            LinkedIn
+            </a> 
+          </div>
+          &nbsp;
+          {bio && <p>{bio}</p>}     
+        </div> 
+        {profilePicture && (
+          <div className="about-profile-picture">
+            <img
+              src={process.env.PUBLIC_URL + profilePicture}
+              alt="Profile"
+            />
+          </div>
+        )}
       </div>
-      {Object.entries(about).slice(1).map(([sectionTitle, content]) => (
+
+      {Object.entries(about)
+        .filter(([sectionTitle]) => sectionTitle !== 'bio')
+        .filter(([sectionTitle]) => sectionTitle !== 'profilePicture')
+        .slice(1).map(([sectionTitle, content]) => (
         <section key={sectionTitle}>
           <h3 style={{color: getRandomColor()}}>{sectionTitle.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</h3>
           
