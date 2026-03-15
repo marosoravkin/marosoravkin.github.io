@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+* {
+  margin: 0;
+}
+
+html {
+  transition: background-color 500ms ease-in-out, color 300ms ease-in-out;
+}
+
+/* Light Theme */
+:root {
+  --bg-color: #f9fafb;
+  --text-color: #111827;
+  --button-bg: #e5e7eb;
+  --button-text: #111827;
+  --nav-height: 50px;
+  --sidebar-width: 30px;
+  --background-overlay: white;
+}
+
+.dark {
+  --bg-color: #111827;
+  --text-color: #f3f3f3;
+  --button-bg: #374151;
+  --button-text: #f9fafb;
+  --background-overlay: black;
+}
+
+body {
+  @apply text-gray-800 font-mono bg-gray-100;
+  font-family: 'IBM Plex Mono', monospace;
+  background-image: url('../public/images/grain_texture.jpeg');
+  color: var(--text-color);
+  margin-left: var(--sidebar-width);
+  background-repeat: repeat;
+  background-size: 600px 600px;
+  background-blend-mode: multiply;
+  height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Grain overlay – stays on top in both modes */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--background-overlay);
+  opacity: 0.8;
+  z-index: -1;
+  pointer-events: none;
+}
+
+a {
+  color: var(--text-color);
+}
+
+h1 {
+  text-transform: uppercase;
+  font-style: normal;
+  margin: 0;
+}
+/* ====================================== Buttons ============================================== */
+
+.braces-button {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Wrap with curly braces */
+.braces-button::before {
+  font-family: 'Courier New', Courier, monospace;
+  content: '{ ';
+  font-size: large;
+}
+
+.braces-button::after {
+  font-family: 'Courier New', Courier, monospace;
+  content: ' }';
+  font-size: large;
+}
+
+/* Optional hover style */
+.braces-button:hover {
+  color: var(--button-selected);
+}
+
+/* Optional clicked state (active) */
+.braces-button:active {
+  color: var(--button-selected);
+}
+
+/* ====================================== Navbar ============================================== */
+
+.navbar {
+  height: var(--nav-height);
+  width: calc(100vw - var(--sidebar-width));
+  display: flex;
+  justify-content: center;
+  margin-left: var(--sidebar-width);
+  align-items: center;
+  color: var(--text-color);
+  z-index: 10;
+}
+
+.nav-links a {
+  position: relative;
+  margin-right: 1.5rem;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.2s ease-in-out;
+  display: inline-block; /* Important! Ensures pseudo-elements behave correctly */
+}
+
+.nav-links a::before {
+  content: '[';
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+  margin-right: 0.25rem;
+}
+
+.nav-links a::after {
+  content: ']';
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+  margin-left: 0.25rem;
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+  opacity: 1;
+}
+
+/* ====================================== Side bar and light/dark modes ============================================== */
+
+.dark-toggle {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  color: var(--button-text);
+  cursor: pointer;
+  transition: all 300s ease-in-out;
+}
+
+.theme-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100dvh;
+  border-right: 1px solid var(--button-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  font-family: 'IBM Plex Mono', monospace;
+  z-index: 3;
+  padding-bottom: 1rem;
+}
+
+.theme-option {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.label-text {
+  writing-mode: vertical-rl;
+  font-size: smaller;
+  text-transform: uppercase;
+  transform: rotate(180deg);
+  text-align: center;
+  color: var(--text-color);
+  padding-bottom: 1rem;
+}
+
+.theme-button {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-color);
+  margin-top: 0.5rem;
+  background-color: transparent;
+  transition: all 300ms ease-in-out;
+}
+
+.theme-button input {
+  display: none;
+}
+
+.theme-button span {
+  position: relative;
+  display: block;
+  width: 10px;
+  height: 10px;
+}
+
+.theme-button span.checked::before,
+.theme-button span.checked::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--text-color);
+  top: 50%;
+  left: 0;
+  transform-origin: center;
+}
+
+.theme-button span.checked::before {
+  transform: rotate(45deg);
+}
+
+.theme-button span.checked::after {
+  transform: rotate(-45deg);
+}
+
+/* ====================================== Home ============================================== */
+
+.home-container {
+  box-sizing: border-box;
+  padding: 2rem;
+  margin-left: var(--sidebar-width);
+  color: var(--text-color);
+  font-family: 'IBM Plex Mono', monospace;
+  width: calc(100dvw - var(--sidebar-width));
+  height: calc(100dvh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.canvas-wrapper {
+  flex-grow: 1;          /* ← take remaining space */
+  position: relative;
+  overflow: hidden;
+}
+
+.canvas-wrapper canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* ====================================== Projects Page and Project Cards ============================================== */
+
+.projects-container {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--text-color, #ccc);
+  box-sizing: border-box;
+  padding: 2rem;
+  margin-left: var(--sidebar-width);
+  font-family: 'IBM Plex Mono', monospace;
+  width: calc(100dvw - var(--sidebar-width));
+  height: max-content;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.project-line {
+  padding: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.project-line .title-value {
+  font-size: large;
+}
+
+.project-line .braces-button {
+  font-size: 0.9rem;
+}
+
+.project-line .wrap{
+  display: inline-block;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 70%; /* wrapping width */
+  vertical-align: top;
+  /* Hanging indent */
+  padding-left: 1ch;    /* matches key + ": " width */
+  text-indent: -1ch;    /* pulls first line back */
+}
+
+.key {
+  margin-left: 3rem;
+}
+
+.project-img-wrapper {
+  height: 100%;
+}
+
+.project-img-wrapper img {
+  height: 12rem;
+  width: auto; /* Optional: maintains aspect ratio */
+  object-fit: cover; /* Optional: ensures the image fills the space without distortion */
+}
+
+/* ====================================== Projects Sidebar, Project Detail ============================================== */
+
+.project-docs-page {
+  display: flex;
+}
+
+.projects-sidebar {
+  width: 280px;
+  padding: 1rem;
+  min-width: 90px;
+  max-width: 50%;
+  overflow-y: auto;
+  resize: horizontal;
+  box-sizing: border-box;
+  border-right: 1px solid #ddd;
+}
+
+.projects-sidebar ul {
+  margin-top: 1rem;
+}
+
+.projects-sidebar h3 {
+  margin-top: 0;
+}
+
+.project-docs-wrapper {
+  height: 100% - var(--nav-height);
+  overflow: hidden;
+}
+
+.resizable-container {
+  display: flex;
+  width: calc(100vw - var(--sidebar-width));
+  margin: var(--sidebar-width);
+  height: 100%;
+}
+
+.resizer {
+  width: 5px;
+  cursor: col-resize;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.braces-button.disabled {
+  opacity: 0;
+  pointer-events: none;
+  cursor: default;
+}
+
+.projects-sidebar button {
+  background: none;
+  font-family: 'IBM Plex Mono', monospace;
+  border: none;
+  font-size: smaller;
+  letter-spacing: 0.001rem;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  text-align: left;
+  width: 100%;
+  color: var(--text-color);
+}
+
+.project-button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-family: inherit;
+  padding: 0.3rem 0;
+  width: 100%;
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.project-button:hover {
+  color: var(--button-selected);
+}
+
+.project-button::before {
+  content: '[';
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+  margin-right: 0.25rem;
+}
+
+.project-button::after {
+  content: ']';
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+  margin-left: 0.25rem;
+}
+
+.project-button.active {
+    font-weight: bold;
+}
+
+.project-button.active::before, .project-button.active::after {
+    opacity: 1;
+    font-weight: bold;
+}
+
+.projects-sidebar ul {
+  list-style-type: none;
+  padding-left: 0;
+  color: var(--text-color);
+}
+
+/* ====================================== Markdown ============================================== */
+
+.content {
+  padding: 0 1rem 1rem 1rem;
+  flex: 1;
+}
+
+.content p, .content li, .content img{
+  font-size: small;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .content p {
+  margin: 1rem 0 0 0; 
+}
+
+.content p {
+  margin: 0.5rem 0; 
+}
+
+iframe {
+  pointer-events: auto;
+  overflow: auto;
+  display: block;
+}
+
+.pdf-wrapper {
+  height: 800px;         /* fixed height */
+  overflow-y: auto;      /* vertical scroll */
+  -webkit-overflow-scrolling: touch; /* smooth on iOS */
+  position: relative;
+}
+
+.pdf-wrapper {
+  height: 800px;         /* fixed height */
+  overflow-y: auto;      /* vertical scroll */
+  -webkit-overflow-scrolling: touch; /* smooth on iOS */
+  position: relative;
+}
+
+/* ====================================== About page ============================================== */
+
+.about-container {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 2rem;
+  margin-left: var(--sidebar-width);
+  color: var(--text-color);
+  width: calc(100dvw - var(--sidebar-width));
+  height: auto;
+}
+
+.about-container p, .about-container li {
+  font-size: 0.9rem;
+  line-height: 130%;
+  margin-bottom: 0.3rem;
+}
+
+.about-container section {
+  margin: 1rem 0;
+}
+
+
+/* ====================================== Contact page ============================================== */
+
+.contact-container {
+  padding: 2rem;
+  box-sizing: border-box;
+  width: calc(100vw - var(--sidebar-width));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: var(--sidebar-width);
+}
+
+.contact-container p {
+  margin: 0.5rem 0rem;
+}
+
+.contact-block {
+  margin: 1rem 0;
+  max-width: 700px;
+}
+
+.contact-block div {
+  margin: 0.5rem 0;
+}
+
+/* ========================================== Media ============================================== */
+
+/* ========================================= Larger Phones ============================================== */
+
+@media (max-width: 768px) {
+
+  :root {
+    --nav-height: 30px;
+  }
+
+  .navbar {
+    align-items: end;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .nav-links a {
+    margin: 0;
+  }
+
+  /* ===================== Home ======================= */
+
+  .home-container {
+    box-sizing: border-box;
+    padding: 1rem;
+  }
+
+  .canvas-wrapper-mobile {
+    box-sizing: border-box;
+  }
+
+  .canvas-wrapper-mobile img{
+    width: calc(100vw - var(--sidebar-width));
+    height: auto;
+  }
+
+  /* ===================== Projects ======================= */
+
+  .project-card {
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .projects-container {
+    padding: 1rem;
+    height: max-content;
+  }
+
+  .project-line .wrap{
+    max-width: 100%; /* wrapping width */
+  }
+
+  .project-line .title {
+    display: none;
+  }
+
+  .project-line .title-value {
+    font-size: medium;
+  }
+
+  .key {
+    margin: 0;
+  }
+
+  .project-line .braces {
+    display: none;
+  }
+
+  .resizable-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projects-sidebar {
+    width: calc(100vw - var(--sidebar-width));
+    max-width: calc(100vw - var(--sidebar-width));
+    min-width: calc(100vw - var(--sidebar-width));
+    resize: none;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    margin-left: 0;
+  }
+
+  .content p, .content li, .content code, .content a{
+    font-size: smaller;
+    width: 100%;
+    white-space: pre-wrap; 
+    word-break: break-word;
+  }
+
+  .content img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* ==================== Markdown ===================== */
+
+  
+
+  /* ===================== About ======================= */
+
+  .about-container {
+    padding: 1rem;
+  }
+
+  /* ===================== Contact ======================= */
+
+  .contact-container {
+    padding: 1rem;
+  }
+}
+
+/* ========================================= Small Phones ============================================== */
+
+@media (max-width: 460px) {
+
+  html {
+    font-size: smaller;
+  }
+
+  .project-line .title-value {
+    font-size: small;
+  }
+
+  .button-group {
+    margin-top: 1rem;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: none;
+  }
+}
+
+/* ========================================= Very Small Phones ============================================== */
+
+
+@media (max-width: 380px) {
+
+  :root {
+    --sidebar-width: 0px;
+    font-size: x-small;
+  }
+
+  .theme-sidebar {
+    display: none;
+  }
+
+  .contact-block {
+    width: 100%;
+  }
+
+}
