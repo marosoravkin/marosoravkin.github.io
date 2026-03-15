@@ -1,10 +1,10 @@
 {
   "about": {
     "contact": {
-      "email": "zuzana.piarova1@gmail.com",
-      "phone": "+421907677920",
-      "github": "https://github.com/zuzanapiarova", 
-      "linkedin": "https://www.linkedin.com/in/zuzanapiarova/", 
+      "email": "maros.oravkin@gmail.com",
+      "phone [SK]": "+421902506071",
+      "phone [CZ]": "+420703037370",
+      "linkedin": "https://www.linkedin.com/in/marosoravkin/", 
       "cv": {
         "cz": "/data/cv-cz.pdf", 
         "eng": "/data/cv-eng.pdf"
@@ -37,31 +37,31 @@
   },
   "projects": [
     {
-      "title": "GreenHack 2025 ČEPS Prize winner",
+      "title": "Night club DEPOT",
       "description": "For the Grid&Green Challenge at GreenHack 2025, we developed a web-based tool that helps urban planners, civil engineers, and grid design consultants find optimal power grid routes using a combination of remote sensing & GIS datasets like CORINE, ZABAGED, and Natura 2000. Our tool provides route visualisation algorithm optimised for cost, sustainability or other metrics selected by filtering options.",
       "img": "/data/header-images/greenhack.png", 
       "file":"/data/files/project.pdf"
     },
     {
-      "title": "miniRT - A simple ray tracer",
+      "title": "Monastery on pilgrimage route",
       "description": "Building a ray tracer to render scenes consisting of simple objects, with dynamic camera movement and object resizing, laying ground for deep graphical programming knowledge.",
       "img": "/data/header-images/minirt.PNG", 
       "file":"/data/files/project.pdf"
     },
     {
-      "title": "Host a website on Cloud(AWS)",
+      "title": "DPS- Reconstruction of an apartment house",
       "description": "A project for university was to host a website with frontend and backend on AWS - designing the architecture, creating and configuring the services and their commmunication, while maintaining key requirements of scalability, low latency, and high availability, and replicating the setup in a Terraform script.",
       "img": "/data/header-images/cloud-prog.png", 
       "file":"/data/files/project.pdf"
     },
     {
-      "title": "Jenkins CI/CD pipeline",
+      "title": "Store interior design",
       "description": "Taking the Greenhack project further, I created a CI/CD pipeline to automate building, testing, packaging, and deploying new versions of the code to make further work on the project easier, and to gain more experience in the DevOps field.",
       "img": "", 
       "file":"/data/files/project.pdf"
     },
     {
-      "title": "minishell - Own little Bash",
+      "title": "Dam Fláje",
       "description": "Taking bash as a reference, the program displays a prompt and processes user input using pipes, processes, file manipulation, envs, all to be able to execute commands, either build-in, system binaries, or user programs. ",
       "img": "/data/header-images/minishell.png", 
       "file":"/data/files/project.pdf"
