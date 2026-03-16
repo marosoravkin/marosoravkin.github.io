@@ -11,14 +11,20 @@
       }
     }, 
     "profilePicture": "/data/profile-picture.jpeg",
-    "bio": "I'm a junior software developer with a strong foundation in C programming, which has given me a solid understanding of how software works at a low level — from memory management through parralelism to system calls. Now, I’m actively building my skills in cloud infrastructure, Linux systems, and DevOps practices. I’ve worked with tools like Docker, AWS, and Terraform, and I’m especially interested in gaining deeper, hands-on experience in distributed systems, automation, and cloud computing. Combined with my previous interest in web development with JavaScript, React, and Node.js, I am creating a proper base for understanding how the applications are deployed, scaled, and maintained in real-world environments.", 
+    "bio": "I am an architecture graduate from the Czech Technical University (CTU), holding both Bachelor's and Master's degrees. My background merges architectural design with hands-on, practical experience gained from developer and complex construction projects. I have an excellent command of the BIM-Revit environment, specifically at the detail design stage (DPS) level. Throughout my practice, I have proven my ability to handle independent design work, process complete project documentation, and effectively coordinate different professions.", 
     "education": {
-      "42": "Student (since March 2024, Prague, CZ). A peer-to-peer software engineering program, in which I was selected after completing the intensive entrance Piscine. The curriculum is project-based and emphasizes system programming, algorithms, problem-solving in a Linux environment, alongside collaboration and communication, solely in English. Currently past the halfway point, working on C++ and advanced infrastructure-focused projects.", 
-      "IU": "Bachelor of Science in Software Engineering (2022-2026, Berlin, DE). Fully remote program focused on programming, software architecture, databases, and modern technologies. Enrolled in 2022 to build a solid theoretical and practical programming foundation, on top of independent learning.", 
-      "CTU": "Architecture Student (2019–2021, Prague, CZ). Studied architecture on ČVUT with a strong focus on mathematics, structural analysis, technical drawing and CAD software. The program sharpened my precision, logic, and problem-solving mindset. I chose to leave after two years, after thorough consideration, upon realizing my expectations and future outlooks did not align with the career path."
+      "FA CTU": "Prague (2020–2026): Bachelor's and Master's degree.", 
+      "UNIVERSITA MEDITERRANEA": "Reggio Calabria (2024): Erasmus+ study program.", 
+      
     }, 
     "skills": {
-      "C": "strong grasp of low-level programming, memory management, system calls, Makefiles, parallelization and more. Built several projects from scratch, including command-line tools and graphical projects", 
+      "BIM & CAD": {
+        "Revit": "Advanced.", 
+        "AutoCAD": "Advanced.", 
+        "Archicad": "Intermediate.", 
+      
+    }, 
+      "strong grasp of low-level programming, memory management, system calls, Makefiles, parallelization and more. Built several projects from scratch, including command-line tools and graphical projects", 
       "web development": "started with frontend in 2021 using Codecademy, built responsive websites using HTML, CSS, and JavaScript, transitioned to using React, later experimented with API integration and working with Node.js for full-stack applications", 
       "Linux/bash": "daily use of Linux environments. Comfortable with command-line tools, file system navigation, shell scripting, and writing automation scripts. Explored Unix internals through 42Prague system programming projects",
       "scripting": "wrote Bash scripts to automate repetitive tasks, deploy code, and manage files or processes",
