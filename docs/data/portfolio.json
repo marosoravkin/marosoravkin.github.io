@@ -22,7 +22,7 @@
         "Revit": "Advanced.", 
         "AutoCAD": "Advanced.", 
         "Archicad": "Intermediate.", 
-      
+      }
     }, 
       "strong grasp of low-level programming, memory management, system calls, Makefiles, parallelization and more. Built several projects from scratch, including command-line tools and graphical projects", 
       "web development": "started with frontend in 2021 using Codecademy, built responsive websites using HTML, CSS, and JavaScript, transitioned to using React, later experimented with API integration and working with Node.js for full-stack applications", 
