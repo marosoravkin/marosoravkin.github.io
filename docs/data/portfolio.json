@@ -48,31 +48,31 @@
   "projects": [
     {
       "title": "Night club DEPOT",
-      "description": "For the Grid&Green Challenge at GreenHack 2025, we developed a web-based tool that helps urban planners, civil engineers, and grid design consultants find optimal power grid routes using a combination of remote sensing & GIS datasets like CORINE, ZABAGED, and Natura 2000. Our tool provides route visualisation algorithm optimised for cost, sustainability or other metrics selected by filtering options.",
+      "description": "The diploma project focuses on the design of a nightclub as an architectural insertion into an existing industrial building in Bratislava. The project explores the adaptive reuse of a former technical complex into a contemporary cultural venue, emphasizing the preservation of the original structure, operational flexibility, and the separation of daytime and nighttime activities.",
       "img": "/data/header-images/night_club_depot.png", 
       "file":"/data/files/night_club_depot.pdf"
     },
     {
       "title": "Monastery on pilgrimage route",
-      "description": "Building a ray tracer to render scenes consisting of simple objects, with dynamic camera movement and object resizing, laying ground for deep graphical programming knowledge.",
+      "description": "In the Baroque farm yard of the Vilémov manor, we propose a monastery, accommodation for pilgrims, and a small brewery. On the site of the original ruined building is the new brewery, which together with the accommodation opposite it forms the western border of the courtyard and forms the entrance from the Via Bohemia pilgrimage route. The monastery extends south of the courtyard and is cut into the sloping ground by its lower storey. It is connected to the chapel, which dominates the courtyard. The functional division of the buildings ensures privacy and silence in the monastery, openness, and transparency in the brewery and accommodation. Connection to and development of the surrounding countryside was important in the design.",
       "img": "/data/header-images/monastery.png", 
       "file":"/data/files/monastery.pdf"
     },
     {
       "title": "DPS - Reconstruction of an apartment house",
-      "description": "A project for university was to host a website with frontend and backend on AWS - designing the architecture, creating and configuring the services and their commmunication, while maintaining key requirements of scalability, low latency, and high availability, and replicating the setup in a Terraform script.",
+      "description": "The project is dedicated to the complex reconstruction of the original mountain hut in the Jeseníky area, which no longer met the current requirements for recreational housing. The aim was to create quality accommodation with an emphasis on preserving the atmosphere of the place and integration into the natural environment. The architectural design uses a combination of traditional and modern materials - wood, stone and metal - which respond to the local climatic conditions and visually relate to the context of the mountain landscape.",
       "img": "/data/header-images/dps_jeseniky.png", 
       "file":"/data/files/dps_jeseniky.pdf"
     },
     {
       "title": "Store interior design",
-      "description": "Taking the Greenhack project further, I created a CI/CD pipeline to automate building, testing, packaging, and deploying new versions of the code to make further work on the project easier, and to gain more experience in the DevOps field.",
+      "description": "A tailored interior design for a sports supplements store in Valencia, built around the brand's core philosophy: “Healthy is not a goal, it is a way of living.” The concept merges everyday functionality with a fresh, dynamic aesthetic, utilizing a material palette of light wood, clean white surfaces, and striking blue tile accents. The thoughtfully modified floorplan optimizes customer flow, featuring a custom-made curved reception desk, adaptable modular shelving, and a bold sculptural LED pendant light.",
       "img": "/data/header-images/retail_store.png", 
       "file":"/data/files/retail_store.pdf"
     },
     {
       "title": "Dam Fláje",
-      "description": "Taking bash as a reference, the program displays a prompt and processes user input using pipes, processes, file manipulation, envs, all to be able to execute commands, either build-in, system binaries, or user programs. ",
+      "description": "The “Spa upside down“ project is focused on innovative spa concept based on several previous proposals. This work seeks to bring a new perspective to the spa concept, that goes beyond traditional boundaries. In addition to presenting our own proposal, we also choose to present several previous ideas, that have inspired us. The key question at this stage of the project remains, whether the concept of a spa in a dam is really viable and whether it brings measurable benefits for visitors. Is this unconventional idea of a spa centre in such a setting is a really good idea,or just an experiment?  ",
       "img": "/data/header-images/dam_flaje.png", 
       "file":"/data/files/dam_flaje.pdf"
     }
